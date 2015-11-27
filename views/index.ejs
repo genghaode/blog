@@ -1,11 +1,25 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
-</html>
+<% include include/header.ejs %>
+<ol>
+    <% articles.forEach(function(article){%>
+    <li>
+        头像：<img src="<%= article.user.avatar %>" alt=""><br>
+        标题：<a href="/articles/detail/<%= article._id%>"><%= article.title %></a><br>
+        内容：<p><%- article.content%></p>
+        <% if(article.img){ %>
+        图片：<img src="<%= article.img %>" alt=""><br>
+        <% } %>
+        作者：<%= article.user.username %><br>
+        发表时间：<%= article.createAt.toLocaleString() %><br>
+        浏览数：<%= article.pv %><br>
+        评论：<%= article.comments.length %>
+    </li>
+    <% }); %>
+</ol>
+<ul>
+    <% for(var i=1; i<= totalPage; i++){ %>
+    <li>
+        <a href="/articles/list/<%= i %>/<%= pageSize%>?keyword=<%= keyword %>"><%= i %></a>
+    </li>
+    <% } %>
+</ul>
+<% include include/footer.ejs %>

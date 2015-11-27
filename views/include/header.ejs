@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title><%= title %></title>
+</head>
+<body>
+<ul>
+	<li><a href="/">首页</a></li>
+	<% if(!user){ %>
+	<li><a href="/users/reg">注册</a></li>
+	<li><a href="/users/login">登录</a></li>
+	<% }else{ %>
+	<li><a href="/articles/add">发表文章</a></li>
+	<li><a href="/users/logout">退出</a></li>
+	<% } %>
+</ul>
+<% if(success){ %>
+<div><%= success %></div>
+<% } %>
+<% if(error){ %>
+<div><%= error %></div>
+<% } %>
+<form action="#" method="get">
+	关键字:<input type="text" name="keyword" value="">
+	<input type="submit" value="搜索" name="serchBtn">
+</form>

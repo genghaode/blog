@@ -1,0 +1,12 @@
+<% include ../include/header.ejs %>
+<form action="/articles/add" method="post">
+    <input type="hidden" value="<%= article._id %>">
+    标题：<input type="text" name="title" value="<%= article.title %>"><br>
+    正文：<textarea name="content" cols="30" rows="10"><%= article.content %></textarea><br>
+    上传图片：<input type="file" name="img" value="上传"><br>
+    <% if(article.img){ %>
+    <img src="<%= article.img %>">
+    <% } %>
+    <input type="submit" value="提交">
+</form>
+<% include ../include/footer.ejs %>
