@@ -22,7 +22,7 @@
 <% if(error){ %>
 <div><%= error %></div>
 <% } %>
-<form action="#" method="get">
-	关键字:<input type="text" name="keyword" value="">
-	<input type="submit" value="搜索" name="serchBtn">
+<form action="/articles/list/1/2" method="get">
+	关键字:<input type="text" name="keyword" value="<%= keyword %>">
+	<input type="submit" value="搜索" name="searchBtn">
 </form>

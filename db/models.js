@@ -15,7 +15,7 @@ module.exports = {
     pv: {type: Number, default: 0},
     comments: [{
       user: {type: ObjectId, ref: 'User'},
-      contnet: String,
+      content: String,
       createAt: {type: Date, default: Date.now}
     }],
     createAt: {type: Date, default: Date.now}

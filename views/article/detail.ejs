@@ -1,3 +1,27 @@
 <% include ../include/header.ejs %>
-文章详情
+标题：<h2><%= article.title %></h2>
+内容：<div><%- article.content %></div>
+<% if(article.img){ %>
+图片内容：<img src="<%= article.img %>" alt="">
+<% } %>
+<% if(user && article.user._id == user._id){ %>
+<a href="/articles/edit/<%= article._id %>">编辑</a><br>
+<a href="/articles/delete/<%= article._id %>">删除</a><br>
+<% } %>
+评论列表：
+<ul>
+    <% article.comments.forEach(function(comment){ %>
+    <li>
+        头像：<img src="<%= comment.user.avatar%>" alt=""><br>
+        内容：<p><%- comment.content %></p>
+        评论人：<div><%= comment.user.username %></div>
+        评论时间：<div><%= comment.createAt.toLocaleString() %></div>
+    </li>
+    <% }); %>
+</ul>
+<form action="/articles/comment" method="post">
+    <input type="hidden" value="<%= article._id %>" name="_id">
+    评论内容：<input type="text" name="content"><br>
+    <input type="submit" value="提交评论">
+</form>
 <% include ../include/footer.ejs %>
