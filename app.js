@@ -33,12 +33,13 @@ app.use(session({
   saveUninitialized: true,
   secret: settings.cookieSecret,
   key: settings.db,
-  cookie: { maxAge: 1000*60*60}
-  //store: new MongoStore({
-  //  db: settings.db,
-  //  host: settings.host,
-  //  port: settings.port
-  //})
+  cookie: { maxAge: 1000*60*60},
+  store: new MongoStore({
+    url: settings.url,
+    db: settings.db,
+    host: settings.host,
+    port: settings.port
+  })
 }));
 app.use(flash());
 
