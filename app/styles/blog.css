@@ -1,9 +1,38 @@
+/* 头部导航 */
+#header {
+	position: fixed;
+	top: 0;
+	left: 0;
+}
 #header .navWrap {
 	background-color: #333;
-	padding: .7rem;
+	color: #eee;
+	text-align: center;
+	border-bottom: 1px solid #f04848;
+}
+#header .navWrap .td {
+	padding-top: .5rem;
+	padding-bottom: .5rem;
+}
+#header .active {
+	background-color: #f04848;
 	color: #fff;
 }
 
-#header .title {
-	text-align: center;
+/* 搜索框 */
+.searchWrap {
+	padding: .5rem;
+	background-color: #333;
+	border-bottom: 1px solid #f04848;
+	display: none;
 }
+
+/* 内容部分 */
+#container {
+	padding-top: 2.5rem;
+}
+#container .wrap {
+	padding: .5rem;
+}
+
+/* 盒子 */

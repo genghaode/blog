@@ -1,4 +1,4 @@
-body, header, footer, h1, h2, h3, ul, li, a, span, div, textarea, input {
+body, header, footer, nav, section, h1, h2, h3, ul, li, a, span, div, form, textarea, input, button {
 	box-sizing: border-box;
 }
 
@@ -84,9 +84,15 @@ textarea {
 }
 
 
-.tr {
+.tr, .trLayout {
 	display: table;
+	width: 100%;
+
 }
+.trLayout {
+	table-layout: fixed;
+}
+
 .td, .td100 {
 	display: table-cell;
 	vertical-align: middle;
@@ -94,4 +100,31 @@ textarea {
 }
 .td100 {
 	width: 100%;
+}
+.tdSpace {
+	padding: .5rem;
+}
+
+.input, .input100 {
+	padding: .2rem .4rem;
+	border: 1px solid #e0e0e0;
+	border-radius: .3rem;
+	outline: none;
+}
+.input100 {
+	width: 100%;
+}
+
+.marginL {
+	margin-left: .5rem;
+}
+.padding {
+	padding: .5rem;
+}
+
+.formCol {
+	margin-bottom: 1rem;
+}
+.formCol:last-child {
+	margin: 0;
 }
