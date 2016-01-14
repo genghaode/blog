@@ -1,12 +1,20 @@
 <% include ../include/header.ejs %>
-<form action="/articles/add" method="post" enctype="multipart/form-data">
-    <input type="hidden" value="<%= article._id %>">
-    标题：<input type="text" name="title" value="<%= article.title %>"><br>
-    正文：<textarea name="content" cols="30" rows="10"><%= article.content %></textarea><br>
-    上传图片：<input type="file" name="img" value="上传"><br>
-    <% if(article.img){ %>
-    <img src="<%= article.img %>">
-    <% } %>
-    <input type="submit" value="提交">
-</form>
+<div class="post wrap">
+  <form action="/articles/add" method="post" name="form" class="form">
+  	<input type="hidden" value="<%= article._id %>">
+    <div class="boxWrap padding">
+      <label class="formCol">
+        <input type="text" name="title" id="title" value="<%= article.title %>" placeholder="请输入标题" class="input100">
+      </label>
+      <label class="formCol">
+      <textarea name="content" id="content" placeholder="请输入内容" class="input100 content"><%= article.content %></textarea>
+      </label>
+      <div class="formCol formMsg smallFont">
+        1.<span id="titleMsg">请输入标题！</span>
+        2.<span id="contentMsg">请输入内容！</span>
+      </div>
+    </div>
+    <input type="submit" value="发布文章" class="btnSubmit input100">
+  </form>
+</div>
 <% include ../include/footer.ejs %>

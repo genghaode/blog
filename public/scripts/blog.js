@@ -140,7 +140,7 @@ $(function(){
 		return false;
 	}
 	var scrollFlag = false;
-/*	$(window).on('scroll', function(){
+	$(window).on('scroll', function(){
 		
 		if($(window).scrollTop()+$(window).height() > $('#item').find('.itemWrap:last-child').offset().top) {
 			if(scrollFlag){
@@ -157,6 +157,6 @@ $(function(){
 				}
 			})
 		}
-	});*/
+	});
 	
 });

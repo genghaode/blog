@@ -21,23 +21,34 @@
 
   	</nav>
   	<div class="searchWrap">
-  		<form action="" class="tr">
-	  		<label class="td100">
-	  			<input type="text" class="input100" placeholder="请输入搜索关键字">
-	  		</label>
-	  		<input type="button" class="td input marginL" value="搜索">
-	  	</form>
+      <form action="" class="tr">
+        <label class="td100">
+          <input type="text" class="input100" placeholder="请输入搜索关键字">
+        </label>
+        <input type="button" class="td input marginL btnSubmit" value="搜索">
+      </form>
   	</div>
   	
 
   </header>
   <section id="container">
   	<div class="reg wrap">
-      <form action="">
+      <form action="" name="form" class="form">
         <div class="boxWrap padding">
-          
+          <label class="formCol">
+            <input type="text" name="email" id="email" placeholder="请输入邮箱" class="input100">
+          </label>
+          <label class="formCol">
+            <input type="password" name="password" id="password" placeholder="请输入密码" class="input100">
+          </label>
+          <div class="formCol formMsg smallFont">
+            1.<span id="emailMsg">请输入邮箱！</span>
+            2.<span id="passwordMsg">请输入密码！</span>
+          </div>
         </div>
+        <input type="submit" value="注册" class="btnSubmit input100">
       </form>
+      
     </div>
   </section>
   <footer id="footer">

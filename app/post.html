@@ -12,12 +12,12 @@
 <body>
   <header id="header">
   	<nav class="navWrap trLayout">
-      <a href="index.html" class="td">首页</a>
-      <a href="javascrpt:void(0);" class="td searchBtn">搜索</a>
-      <a href="reg.html" class="td">注册</a>
-      <a href="login.html" class="td active">登录</a>
-<!--   		<a href="javascrpt:void(0);" class="td">发布文章</a>
-  		<a href="javascrpt:void(0);" class="td">头像+昵称</a> -->
+  		<a href="index.html" class="td">首页</a>
+  		<a href="javascrpt:void(0);" class="td searchBtn">搜索</a>
+  		<a href="reg.html" class="td">注册</a>
+  		<a href="login.html" class="td">登录</a>
+  		<a href="post.html" class="td active">发布文章</a>
+  		<a href="info.html" class="td">昵称</a>
 
   	</nav>
   	<div class="searchWrap">
@@ -28,28 +28,26 @@
 	  		<input type="button" class="td input marginL btnSubmit" value="搜索">
 	  	</form>
   	</div>
-  	
 
   </header>
   <section id="container">
-    <div class="login wrap">
-      <form action="reg.html" name="form" class="form">
+  	<div class="post wrap">
+      <form action="" name="form" class="form">
         <div class="boxWrap padding">
           <label class="formCol">
-            <input type="text" name="email" id="email" placeholder="请输入邮箱" class="input100">
+            <input type="text" name="title" id="title" placeholder="请输入标题" class="input100">
           </label>
           <label class="formCol">
-            <input type="password" name="password" id="password" placeholder="请输入密码" class="input100">
+          <textarea name="content" id="content" placeholder="请输入内容" class="input100 content"></textarea>
           </label>
           <div class="formCol formMsg smallFont">
-            1.<span id="emailMsg">请输入邮箱！</span>
-            2.<span id="passwordMsg">请输入密码！</span>
+            1.<span id="titleMsg">请输入标题！</span>
+            2.<span id="contentMsg">请输入内容！</span>
           </div>
         </div>
-        <input type="submit" value="登录" class="btnSubmit input100">
+        <input type="submit" value="发布文章" class="btnSubmit input100">
       </form>
-      
-    </div>
+  	</div>
   </section>
   <footer id="footer">
   	

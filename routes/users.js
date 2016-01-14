@@ -8,11 +8,6 @@ router.get('/reg', myUtil.checkNotLogin,  function(req, res, next) {
 });
 router.post('/reg', myUtil.checkNotLogin, function(req, res, next){
   var user = req.body;
-  if(user.password != user.repassword){
-    req.flash('error', '两次输入密码不一致');
-    return res.redirect('/users/reg');
-  }
-  delete user.repassword;
   user.password = myUtil.md5(user.password);
   user.avatar = 'https://secure.gravatar.com/avatar/'+myUtil.md5(user.email)+'?s=48';
   new Model('User')(user).save(function(err, user){

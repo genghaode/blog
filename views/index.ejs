@@ -1,25 +1,27 @@
 <% include include/header.ejs %>
-<ol>
+<div class="index wrap">
+  <input type="hidden" id="nextPageNum" value="2">
+  <input type="hidden" id="url" value="/item">
+  <ul id="item">
     <% articles.forEach(function(article){%>
-    <li>
-        头像：<img src="<%= article.user.avatar %>" alt=""><br>
-        标题：<a href="/articles/detail/<%= article._id%>"><%= article.title %></a><br>
-        内容：<p><%- article.content%></p>
-        <% if(article.img){ %>
-        图片：<img src="<%= article.img %>" alt=""><br>
-        <% } %>
-        作者：<%= article.user.username %><br>
-        发表时间：<%= article.createAt.toLocaleString() %><br>
-        浏览数：<%= article.pv %><br>
-        评论：<%= article.comments.length %>
+    <li class="itemWrap boxWrap padding">
+      <h2 class="title"><%= article.title %></h2>
+      <ul class="infoWrap">
+        <li>时间：<span><%= article.createAt.toLocaleString() %></span></li>
+        <li>作者：<span><%= article.user.email %></span></li>
+        <li>浏览数：<span><%= article.pv %></span></li>
+        <li>评论数：<%= article.comments.length %></span></li>
+        <li><a href="/articles/detail/<%= article._id%>" class="link">阅读原文</a></li>
+      </ul>
     </li>
     <% }); %>
-</ol>
+  </ul>
+</div>
 <ul>
-    <% for(var i=1; i<= totalPage; i++){ %>
-    <li>
-        <a href="/articles/list/<%= i %>/<%= pageSize%>?keyword=<%= keyword %>"><%= i %></a>
-    </li>
-    <% } %>
+  <% for(var i=1; i<= totalPage; i++){ %>
+  <li>
+      <a href="/articles/list/<%= i %>/<%= pageSize%>?keyword=<%= keyword %>"><%= i %></a>
+  </li>
+  <% } %>
 </ul>
 <% include include/footer.ejs %>
